@@ -7,6 +7,6 @@ app.get("/", (req, res) => {
   res.send("Node.js application is running!");
 });
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
