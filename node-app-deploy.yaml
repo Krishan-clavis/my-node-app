@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: node-container
-        image: 481716204214.dkr.ecr.us-east-2.amazonaws.com/ecr-repo1:latest
+        image: 467839000245.dkr.ecr.us-east-1.amazonaws.com/nodejs/images:latest
         ports:
         - containerPort: 3000
       imagePullSecrets:
