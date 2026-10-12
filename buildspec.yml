@@ -3,32 +3,28 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: latest
     commands:
-      - echo Logging in to CodeArtifact...
-      - echo Installing dependencies...
-      - npm install
+      - echo "installing something"
+
   pre_build:
     commands:
-      - echo Running tests...
-#      - npm test  # <-- Yahan test command chalegi
-      - npm install --save-dev jest
+      - echo "we are in the pre build phase"
 
   build:
     commands:
-      - echo Build started...
-      - echo Creating package...
-      - npm pack
-      - pwd
-      - ls
-      - echo Publishing to CodeArtifact....
-      - cat package.json
-      - npm publish
+      - echo "we are in the build block"
+      - echo "we will run some tests"
+      - mkdir -p build_output
+      - grep -Fq "Congratulations" index.html
+
   post_build:
     commands:
-      - echo Build completed
-      - ls
+      #- echo "Uploading artifacts to S3..."
+      #- aws s3 cp build_output/ s3://cb-bucket111/build-artifacts/ --recursive
       - pwd
+      - ls
+
 artifacts:
   files:
     - '**/*'
