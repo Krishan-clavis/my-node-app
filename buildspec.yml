@@ -7,7 +7,7 @@ phases:
     commands:
       - echo Logging in to CodeArtifact...
       - echo Installing dependencies...
-      #- aws codeartifact login --tool npm --domain mydomain --domain-owner 467839000245 --repository mynpmrepo
+      - aws codeartifact login --tool npm --domain mydomain --domain-owner 467839000245 --repository mynpmrepo
       - npm install
   pre_build:
     commands:
